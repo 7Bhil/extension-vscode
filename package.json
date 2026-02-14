@@ -1,0 +1,71 @@
+{
+  "name": "bhilal-vscode",
+  "displayName": "Language Bhilal",
+  "description": "Prise en charge du langage Bhilal pour VS Code (coloration, snippets et exécution).",
+  "version": "1.1.1",
+  "publisher": "bhilal",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "main": "./extension.js",
+  "activationEvents": [
+    "onLanguage:bhilal"
+  ],
+  "categories": [
+    "Programming Languages"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/7Bhil/Bhilal.git"
+  },
+  "contributes": {
+    "languages": [{
+      "id": "bhilal",
+      "aliases": ["Bhilal", "bhilal"],
+      "extensions": [".bh"],
+      "configuration": "./language-configuration.json",
+      "icon": {
+        "light": "./icons/file-icon.png",
+        "dark": "./icons/file-icon.png"
+      }
+    }],
+    "grammars": [{
+      "language": "bhilal",
+      "scopeName": "source.bh",
+      "path": "./syntaxes/bhilal.tmLanguage.json"
+    }],
+    "snippets": [{
+      "language": "bhilal",
+      "path": "./snippets/snippets.json"
+    }],
+    "commands": [{
+      "command": "bhilal.run",
+      "title": "Exécuter le fichier Bhilal",
+      "icon": "$(play)"
+    }],
+    "menus": {
+        "editor/context": [
+            {
+                "command": "bhilal.run",
+                "when": "editorLangId == bhilal",
+                "group": "navigation"
+            }
+        ],
+        "editor/title": [
+            {
+                "command": "bhilal.run",
+                "when": "editorLangId == bhilal",
+                "group": "navigation"
+            }
+        ]
+    },
+    "keybindings": [
+        {
+            "command": "bhilal.run",
+            "key": "ctrl+f5",
+            "when": "editorLangId == bhilal"
+        }
+    ]
+  }
+}

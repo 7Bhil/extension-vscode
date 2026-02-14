@@ -1,0 +1,56 @@
+{
+  "Condition": {
+    "prefix": "si",
+    "body": [
+      "si ${1:condition} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Structure de condition si"
+  },
+  "Condition Sinon": {
+    "prefix": "sinon",
+    "body": [
+      "si ${1:condition} {",
+      "\t$2",
+      "} sinon {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Structure si/sinon"
+  },
+  "Boucle Tant Que": {
+    "prefix": "tantque",
+    "body": [
+      "tantque ${1:condition} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Boucle tant que"
+  },
+  "Boucle Pour Chaque": {
+    "prefix": "pour",
+    "body": [
+      "pour chaque ${1:item} dans ${2:liste} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Boucle pour chaque"
+  },
+  "Fonction": {
+    "prefix": "fonction",
+    "body": [
+      "fonction ${1:nom}(${2:params}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Définition de fonction"
+  },
+  "Montrer": {
+    "prefix": "m",
+    "body": [
+      "montre($1)"
+    ],
+    "description": "Afficher dans la console"
+  }
+}

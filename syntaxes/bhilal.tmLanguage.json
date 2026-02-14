@@ -1,0 +1,78 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Bhilal",
+  "scopeName": "source.bh",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#keywords" },
+    { "include": "#numbers" },
+    { "include": "#operators" },
+    { "include": "#builtins" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.bh",
+          "match": "#.*$"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.bh",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.bh",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.bh",
+          "match": "\\b(si|sinon|tantque|faire|pour|chaque|dans|essaye|attrape|enfin|renvoie|lance|inclure|de|herite)\\b"
+        },
+        {
+          "name": "keyword.other.declaration.bh",
+          "match": "\\b(soit|fonction|classe|nouveau|abstrait|interface|public|prive)\\b"
+        },
+        {
+          "name": "constant.language.bh",
+          "match": "\\b(vrai|faux|nul)\\b"
+        }
+      ]
+    },
+    "builtins": {
+      "patterns": [
+        {
+          "name": "support.function.bh",
+          "match": "\\b(montre|requete_http|requete_post|mon_ip|analyse_en_tetes|scan_vulnerabilites|test_xss_basique|scan_ports|dirbuster|dns_resolve|dns_bruteforce|subnet_scan|longueur|aleatoire|entre|lire|ecrire|existe|supprimer|lister|est_dossier|creer_dossier|renommer)\\b"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.bh",
+          "match": "\\b\\d+(\\.\\d+)?\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.bh",
+          "match": "(\\+|\\-|\\*|/|=|!|<|>|et|ou|non|typeof)"
+        }
+      ]
+    }
+  }
+}
